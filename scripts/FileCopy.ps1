@@ -2,9 +2,9 @@
 # Licensed under the MIT License.
 Param(
     $ModulesToGenerate = @(),
-    [string] $ModuleMappingConfigPath = ("msgraph-sdk-powershell\config\ModulesMapping.jsonc"),
-	[string] $SDKDocsPath = ("msgraph-sdk-powershell\src"),
-	[string] $WorkLoadDocsPath = ("microsoftgraph-docs-powershell\microsoftgraph")
+    [string] $ModuleMappingConfigPath = ("..\msgraph-sdk-powershell\config\ModulesMapping.jsonc"),
+	[string] $SDKDocsPath = ("..\msgraph-sdk-powershell\src"),
+	[string] $WorkLoadDocsPath = ("..\microsoftgraph-docs-powershell\microsoftgraph")
 )
 function Get-GraphMapping {
     $graphMapping = @{}
@@ -59,7 +59,7 @@ function Copy-Files{
         [ValidateNotNullOrEmpty()]
         [string] $ModulePrefix = "Microsoft.Graph",
 		[ValidateNotNullOrEmpty()]
-        [string] $DocPath = "msgraph-sdk-powershell\src\Users\Users\docs\v1.0"
+        [string] $DocPath = "..\msgraph-sdk-powershell\src\Users\Users\docs\v1.0"
     )
 	$moduleImportName = "$ModulePrefix.$ModuleName"
      $destination = Join-Path $WorkLoadDocsPath $GraphProfilePath $moduleImportName
@@ -73,13 +73,7 @@ function Copy-Files{
 }
 
 
-if (-not (Test-Path $ModuleMappingConfigPath)) {
-    Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
-}
-if ($ModulesToGenerate.Count -eq 0) {
-    [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
-    $ModulesToGenerate = $ModuleMapping.Keys
-}
+
 Set-Location microsoftgraph-docs-powershell
 $date = Get-Date -Format "dd-MM-yyyy"
 $proposedBranch = "weekly_update_help_files_"+$date
@@ -88,6 +82,13 @@ if ([string]::IsNullOrEmpty($exists)) {
     git checkout -b $proposedBranch
 }else{
 	Write-Host "Branch already exists"
+}
+if (-not (Test-Path $ModuleMappingConfigPath)) {
+    Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
+}
+if ($ModulesToGenerate.Count -eq 0) {
+    [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
+    $ModulesToGenerate = $ModuleMapping.Keys
 }
 
 Set-Location ..\powershell-docs-update
