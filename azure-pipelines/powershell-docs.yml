@@ -22,7 +22,7 @@ resources:
      type: github
      endpoint: timayabi2020
      name: timayabi2020/msgraph-sdk-powershell
-     ref: main
+     ref: dev
 
 variables:
   buildConfiguration: 'Release'
