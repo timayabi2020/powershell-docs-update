@@ -43,4 +43,4 @@ jobs:
     inputs:
       targetType: 'filePath'
       pwsh: true
-      filePath: s\powershell-docs-update\scripts\FileCopy.ps1
+      filePath: powershell-docs-update\scripts\FileCopy.ps1
