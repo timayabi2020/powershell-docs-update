@@ -2,9 +2,9 @@
 # Licensed under the MIT License.
 Param(
     $ModulesToGenerate = @(),
-    [string] $ModuleMappingConfigPath = ("s\msgraph-sdk-powershell\config\ModulesMapping.jsonc"),
-	[string] $SDKDocsPath = ("s\msgraph-sdk-powershell\src"),
-	[string] $WorkLoadDocsPath = ("s\microsoftgraph-docs-powershell\microsoftgraph")
+    [string] $ModuleMappingConfigPath = ("msgraph-sdk-powershell\config\ModulesMapping.jsonc"),
+	[string] $SDKDocsPath = ("msgraph-sdk-powershell\src"),
+	[string] $WorkLoadDocsPath = ("microsoftgraph-docs-powershell\microsoftgraph")
 )
 function Get-GraphMapping {
     $graphMapping = @{}
@@ -59,7 +59,7 @@ function Copy-Files{
         [ValidateNotNullOrEmpty()]
         [string] $ModulePrefix = "Microsoft.Graph",
 		[ValidateNotNullOrEmpty()]
-        [string] $DocPath = "s\msgraph-sdk-powershell\src\Users\Users\docs\v1.0"
+        [string] $DocPath = "msgraph-sdk-powershell\src\Users\Users\docs\v1.0"
     )
 	$moduleImportName = "$ModulePrefix.$ModuleName"
      $destination = Join-Path $WorkLoadDocsPath $GraphProfilePath $moduleImportName
