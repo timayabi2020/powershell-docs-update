@@ -82,7 +82,14 @@ if ($ModulesToGenerate.Count -eq 0) {
 }
 Set-Location microsoftgraph-docs-powershell
 $date = Get-Date -Format "dd-MM-yyyy"
-git checkout -b weekly_update_help_files_$date
+$proposedBranch = "weekly_update_help_files_"+$date
+$exists = git branch -l $proposedBranch
+if ($exists == null) {
+    git checkout -b $proposedBranch
+}else{
+	Write-Host "Branch already exists"
+}
+
 Set-Location ..\powershell-docs-update
 Write-Host -ForegroundColor Green "-------------finished checking out to today's branch-------------"
 Start-Copy -ModulesToGenerate $ModulesToGenerate
