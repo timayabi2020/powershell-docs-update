@@ -37,3 +37,10 @@ jobs:
     parameters:
       projectFileName: $(projectFileName)
       testType: 'Execution'
+  - task: PowerShell@2
+    displayName: 'Copy Files'
+    continueOnError: false
+    inputs:
+      targetType: 'filePath'
+      pwsh: true
+      filePath: $(System.DefaultWorkingDirectory)/scripts/FileCopy.ps1
