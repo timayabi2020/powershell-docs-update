@@ -1,5 +1,5 @@
 steps:
-- checkout: microsoftgraph-docs-powershell
+- checkout: msgraph-sdk-powershell
   clean: true
   fetchDepth: 1
   persistCredentials: true
