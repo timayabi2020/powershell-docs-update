@@ -16,7 +16,7 @@ resources:
      type: github
      endpoint: timayabi2020
      name: timayabi2020/microsoftgraph-docs-powershell
-     ref: main
+     ref: EscapeAngleBrackets29-07-2022
 
 variables:
   buildConfiguration: 'Release'
