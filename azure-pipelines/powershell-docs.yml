@@ -37,7 +37,7 @@ jobs:
     parameters:
       projectFileName: $(projectFileName)
       testType: 'Execution'
-  - task: FileCopy
+  - task: FileCopy@2
     displayName: 'Copy Files'
     continueOnError: false
     inputs:
@@ -45,7 +45,7 @@ jobs:
       pwsh: true
       filePath: powershell-docs-update\scripts\FileCopy.ps1
       
-  - task: EscapeAngleBrackets
+  - task: EscapeAngleBrackets@2
     displayName: 'Escape angle brackets'
     continueOnError: false
     inputs:
