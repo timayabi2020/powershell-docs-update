@@ -16,7 +16,7 @@ resources:
      type: github
      endpoint: timayabi2020
      name: timayabi2020/microsoftgraph-docs-powershell
-     ref: dev
+     ref: main
 
 variables:
   buildConfiguration: 'Release'
