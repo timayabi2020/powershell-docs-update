@@ -41,6 +41,14 @@ jobs:
       testType: 'Execution'
       
   - task: PowerShell@2
+    displayName: 'Copy files from powershell sdk'
+    continueOnError: false
+    inputs:
+      targetType: 'filePath'
+      pwsh: true
+      filePath: powershell-docs-update\scripts\FileCopy.ps1
+      
+  - task: PowerShell@2
     displayName: 'Escape angle brackets'
     continueOnError: false
     inputs:
