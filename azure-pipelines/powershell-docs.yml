@@ -12,11 +12,11 @@ parameters:
 
 resources:
  repositories:
-   - repository: microsoftgraph-docs-powershell
+   - repository: msgraph-sdk-powershell
      type: github
      endpoint: timayabi2020
-     name: timayabi2020/microsoftgraph-docs-powershell
-     ref: EscapeAngleBrackets29-07-2022
+     name: timayabi2020/msgraph-sdk-powershell
+     ref: dev
 
 variables:
   buildConfiguration: 'Release'
