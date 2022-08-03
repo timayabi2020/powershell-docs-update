@@ -24,7 +24,7 @@ variables:
 jobs:
 - job: PowerShellDocsUpdate
   pool: 
-    name: defualt
+    name: Default
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
   - template: update-template.yml
