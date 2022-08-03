@@ -14,6 +14,9 @@ function Get-GraphMapping {
 }
 
 function Start-Copy {
+	Set-Location microsoftgraph-docs-powershell
+	$date = Get-Date -Format "dd-MM-yyyy"
+	git checkout -b weekly_update_help_files_$date
     Param(
         $ModulesToGenerate = @()
     )
