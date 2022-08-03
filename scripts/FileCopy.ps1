@@ -17,9 +17,6 @@ function Start-Copy {
     Param(
         $ModulesToGenerate = @()
     )
-	Set-Location microsoftgraph-docs-powershell
-	$date = Get-Date -Format "dd-MM-yyyy"
-	git checkout -b weekly_update_help_files_$date
 
     $ModulePrefix = "Microsoft.Graph"
     $GraphMapping = Get-GraphMapping 
@@ -83,5 +80,10 @@ if ($ModulesToGenerate.Count -eq 0) {
     [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
     $ModulesToGenerate = $ModuleMapping.Keys
 }
+Set-Location microsoftgraph-docs-powershell
+$date = Get-Date -Format "dd-MM-yyyy"
+git checkout -b weekly_update_help_files_$date
+Set-Location powershell-docs-update
+Write-Host -ForegroundColor Green "-------------finished checking out to today's branch-------------"
 Start-Copy -ModulesToGenerate $ModulesToGenerate
 Write-Host -ForegroundColor Green "-------------Done-------------"
