@@ -14,9 +14,9 @@ resources:
  repositories:
    - repository: msgraph-sdk-powershell
      type: github
-     endpoint: microsoftgraph
-     name: microsoftgraph/msgraph-sdk-powershell
-     ref: main
+     endpoint: timayabi2020
+     name: timayabi2020/msgraph-sdk-powershell
+     ref: dev
 
 variables:
   buildConfiguration: 'Release'
@@ -24,7 +24,7 @@ variables:
 jobs:
 - job: PowerShellDocsUpdate
   pool: 
-    name: defualt
+    name: Default
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
   - template: update-template.yml
