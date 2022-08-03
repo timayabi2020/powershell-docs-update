@@ -3,6 +3,11 @@ steps:
   clean: true
   fetchDepth: 1
   persistCredentials: true
+  
+- checkout: msgraph-sdk-powershell
+  clean: true
+  fetchDepth: 1
+  persistCredentials: true
 
 - checkout: self
   clean: true
