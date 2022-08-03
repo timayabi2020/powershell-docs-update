@@ -14,8 +14,8 @@ resources:
  repositories:
    - repository: microsoftgraph-docs-powershell
      type: github
-     endpoint: MicrosoftDocs
-     name: MicrosoftDocs/microsoftgraph-docs-powershell
+     endpoint: timayabi2020
+     name: timayabi2020/microsoftgraph-docs-powershell
      ref: main
 
 variables:
