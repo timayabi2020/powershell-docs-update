@@ -12,10 +12,10 @@ parameters:
 
 resources:
  repositories:
-   - repository: microsoft-graph-docs
+   - repository: microsoftgraph-docs-powershell
      type: github
      endpoint: timayabi2020
-     name: timayabi2020/microsoft-graph-docs
+     name: timayabi2020/microsoftgraph-docs-powershell
      ref: main
 
 variables:
