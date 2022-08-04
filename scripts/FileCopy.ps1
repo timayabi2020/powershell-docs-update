@@ -94,5 +94,6 @@ if ($ModulesToGenerate.Count -eq 0) {
 Set-Location ..\powershell-docs-update
 Write-Host -ForegroundColor Green "-------------finished checking out to today's branch-------------"
 Start-Copy -ModulesToGenerate $ModulesToGenerate
-git push -u origin
+cd ..\microsoftgraph-docs-powershell
+git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/timayabi2020/msgraph-sdk-powershell.git"
 Write-Host -ForegroundColor Green "-------------Done-------------"
