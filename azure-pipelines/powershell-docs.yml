@@ -64,5 +64,6 @@ jobs:
         git add .
         git commit -m "Docs update"
         git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/timayabi2020/microsoft-docs-powershell.git"
+        git status
 
          
