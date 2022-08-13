@@ -30,9 +30,9 @@ variables:
 jobs:
 - job: PowerShellDocsUpdate
   pool: 
-    name: Docs
+    name: default
     demands:
-     - agent.name -equals Docs
+     - agent.name -equals docs
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
   - template: update-template.yml
