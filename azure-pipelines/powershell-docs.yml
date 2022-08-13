@@ -30,7 +30,7 @@ variables:
 jobs:
 - job: PowerShellDocsUpdate
   pool: 
-    name: Default
+    name: Azure Pipelines
     demands:
      - agent.name -equals DocsUpdate
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
