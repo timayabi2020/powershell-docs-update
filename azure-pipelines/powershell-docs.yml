@@ -59,7 +59,7 @@ jobs:
         $date = Get-Date -Format "dd-MM-yyyy"
         $proposedBranch = "weekly_update_help_files_"+$date
         Write-Host "Checking out to " $proposedBranch
-        git checkout $proposedBranch
+        #git checkout $proposedBranch
         git branch --show-current
         #git add .
         #git commit -m "Docs update"
