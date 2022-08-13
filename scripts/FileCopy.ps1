@@ -95,5 +95,5 @@ Set-Location ..\powershell-docs-update
 Write-Host -ForegroundColor Green "-------------finished checking out to today's branch-------------"
 Start-Copy -ModulesToGenerate $ModulesToGenerate
 cd ..\microsoftgraph-docs-powershell
-git push -u origin
+git push --set-upstream "https://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@github.com/timayabi2020/microsoft-docs-powershell.git"
 Write-Host -ForegroundColor Green "-------------Done-------------"
