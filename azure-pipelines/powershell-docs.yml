@@ -58,5 +58,6 @@ jobs:
         Set-Location microsoftgraph-docs-powershell
         Write-Host "Location set"
         git status
+        git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/timayabi2020/microsoft-docs-powershell.git"
 
          
