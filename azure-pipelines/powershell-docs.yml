@@ -51,13 +51,13 @@ jobs:
   - task: PowerShell@2
     displayName: Pushing to github
     env:
-      GITHUB_TOKEN: $(GITHUB_TOKEN)
+      GITHUB_TOKEN: ${env:GITHUB_TOKEN}
     inputs:
       targetType: inline
       script: |
         Set-Location microsoftgraph-docs-powershell
         Write-Host "Location set"
         git status
-        git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/timayabi2020/microsoft-docs-powershell.git"
+        git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/timayabi2020/microsoft-docs-powershell.git"
 
          
