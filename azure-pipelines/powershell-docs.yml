@@ -32,7 +32,7 @@ jobs:
   pool: 
     name: default
     demands:
-     - agent.name -equals docs
+     - agent.name -equals Docs
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
   - template: update-template.yml
