@@ -48,15 +48,15 @@ jobs:
       pwsh: true
       filePath: powershell-docs-update\scripts\FileCopy.ps1
 
-    -task: Bash@3
-     displayName: Pushing to github
-     env:
-       GITHUB_TOKEN: $(GITHUB_TOKEN)
-     inputs:
-       targetType: inline
-       script: |
-         Set-Location microsoftgraph-docs-powershell
-         Write-Host "Location set"
-         git status
+  -task: Bash@3
+    displayName: Pushing to github
+    env:
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
+    inputs:
+      targetType: inline
+      script: |
+        Set-Location microsoftgraph-docs-powershell
+        Write-Host "Location set"
+        git status
 
          
