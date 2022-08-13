@@ -59,11 +59,12 @@ jobs:
         $date = Get-Date -Format "dd-MM-yyyy"
         $proposedBranch = "weekly_update_help_files_"+$date
         Write-Host "Checking out to " $proposedBranch
-        #git checkout $proposedBranch
-        git branch --show-current
+        git checkout main
         git add .
         git commit -m "Docs update"
-        git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/timayabi2020/microsoft-docs-powershell.git" HEAD:$proposedBranch
+        git merge $proposedBranch
+        git push -u origin
+        #git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/timayabi2020/microsoft-docs-powershell.git" HEAD:$proposedBranch
         git status
 
          
