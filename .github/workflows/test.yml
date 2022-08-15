@@ -8,7 +8,7 @@ name: "Update Powershell Help Docs PR"
 on:
   push:
     branches: 
-      - docs_5
+      - docs_6
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -32,7 +32,7 @@ jobs:
     - name: Raise PR 
       uses: peter-evans/create-pull-request@v3
       with:
-        branch: "timayabi2020/docs_5"
+        branch: "timayabi2020/docs_6"
         base: main
         title: "Demo for auto pr"
         committer: Tim <timwamalwa@gmail.com>
