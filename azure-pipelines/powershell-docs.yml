@@ -64,7 +64,7 @@ jobs:
         git commit -m "Docs update"
         git merge $proposedBranch
         git push -u origin
-        #git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/timayabi2020/microsoft-docs-powershell.git" HEAD:$proposedBranch
+        #git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/timayabi2020/microsoft-docs-powershell.git" HEAD
         git status
 
          
