@@ -58,6 +58,8 @@ jobs:
         cd microsoftgraph-docs-powershell
         $date = Get-Date -Format "dd-MM-yyyy"
         $proposedBranch = "weekly_update_help_files_"+$date
-        git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/timayabi2020/microsoft-docs-powershell.git" $proposedBranch
+        git add .
+        git commit -m "Docs update"
+        git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/timayabi2020/microsoftgraph-docs-powershell.git" $proposedBranch
         git status
          

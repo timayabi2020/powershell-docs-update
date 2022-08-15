@@ -95,8 +95,4 @@ if ($ModulesToGenerate.Count -eq 0) {
 Set-Location ..\powershell-docs-update
 Write-Host -ForegroundColor Green "-------------finished checking out to today's branch-------------"
 Start-Copy -ModulesToGenerate $ModulesToGenerate
-cd ..\microsoftgraph-docs-powershell
-git add .
-git commit -m "Docs update"
-git status
 Write-Host -ForegroundColor Green "-------------Done-------------"
