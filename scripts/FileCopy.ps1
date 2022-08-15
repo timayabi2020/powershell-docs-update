@@ -82,6 +82,7 @@ if ([string]::IsNullOrEmpty($exists)) {
     git checkout -b $proposedBranch
 }else{
 	Write-Host "Branch already exists"
+     git checkout $proposedBranch
 }
 if (-not (Test-Path $ModuleMappingConfigPath)) {
     Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
