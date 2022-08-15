@@ -55,7 +55,7 @@ jobs:
     inputs:
       targetType: inline
       script: |
-        cd ..\..\microsoftgraph-docs-powershell
+        #cd ..\..\microsoftgraph-docs-powershell
         $date = Get-Date -Format "dd-MM-yyyy"
         $proposedBranch = "weekly_update_help_files_"+$date
         Write-Host "Checking out to " $proposedBranch
