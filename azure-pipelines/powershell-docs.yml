@@ -58,12 +58,6 @@ jobs:
         cd microsoftgraph-docs-powershell
         $date = Get-Date -Format "dd-MM-yyyy"
         $proposedBranch = "weekly_update_help_files_"+$date
-        Write-Host "Checking out to " $proposedBranch
-        (Get-Location).path
-        git rev-parse --abbrev-ref HEAD
-        #git checkout -f $proposedBranch
-        #git status
-        #git push --set-upstream origin weekly_update_help_files_15-08-2022
-        #git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/timayabi2020/microsoft-docs-powershell.git"
-
+        git push --set-upstream "https://${env:GITHUB_TOKEN}@github.com/timayabi2020/microsoft-docs-powershell.git" $proposedBranch
+        git status
          
