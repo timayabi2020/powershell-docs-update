@@ -68,8 +68,6 @@ function Copy-Files{
 	if ((Test-Path $DocPath)) {
 		 Write-Host -ForegroundColor DarkYellow "Copying markdown files to " $destination
 		Copy-Item $source -Destination $destination
-        git add .
-        git commit -m "Docs update"
 	}
       
 }
@@ -98,4 +96,6 @@ Set-Location ..\powershell-docs-update
 Write-Host -ForegroundColor Green "-------------finished checking out to today's branch-------------"
 Start-Copy -ModulesToGenerate $ModulesToGenerate
 cd ..\microsoftgraph-docs-powershell
+git add .
+git commit -m "Docs update"
 Write-Host -ForegroundColor Green "-------------Done-------------"
