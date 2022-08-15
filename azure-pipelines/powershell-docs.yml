@@ -60,7 +60,7 @@ jobs:
         $proposedBranch = "weekly_update_help_files_"+$date
         Write-Host "Checking out to " $proposedBranch
         (Get-Location).path
-        git branch –-show-current
+        git branch rev-parse --abbrev-ref HEAD
         #git checkout -f $proposedBranch
         #git status
         #git push --set-upstream origin weekly_update_help_files_15-08-2022
