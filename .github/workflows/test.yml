@@ -8,25 +8,19 @@ name: "Update Powershell Help Docs PR"
 on:
   push:
     branches: 
-      - 'docs/*'
+      - docs_3
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   createHelpsDocsPR:
-    if: github.event_name == 'push' 
     # The type of runner that the job will run on
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Configure User
-      run: |
-         git config --global user.email "timwamalwa@gmail.com"
-         git config --global user.name "Microsoft Graph DevX Tooling"
       
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout
       uses: actions/checkout@v2
-      
       
     #- name: List Directory
     #  run: | 
@@ -35,20 +29,18 @@ jobs:
     #    ls -lsa $GITHUB_WORKSPACE/tools
                 
     # Create a pull request [1]
-    - name: Create PR using the GitHub REST API via hub
-      shell: powershell
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        MESSAGE_TITLE: "Docs Generation"
-        MESSAGE_BODY: "This pull request was automatically created by the GitHub Action,\n\n Contains Help Docs"
-        REVIEWERS: timayabi2020
-        ASSIGNEDTO: timayabi2020
-        LABELS: generated
-        BASE: main
-        HEAD: ${{steps.create_branch.outputs.branch}}
-      run: |
-        curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.1
-        bin/hub pull-request -b "$BASE" -h "$HEAD" -m "$MESSAGE_TITLE" -m "$MESSAGE_BODY" -r "$REVIEWERS" -a "$ASSIGNEDTO" -l "$LABELS"
+    - name: Raise PR 
+      uses: peter-evans/create-pull-request@v3
+      with:
+        branch: "docs_3"
+        base: main
+        title: "Demo for auto pr"
+        committer: Tim <timwamalwa@gmail.com>
+        author: Tim <timwamalwa@gmail.com>
+        body:
+          This is a PR to show auto
+        token: ${{ secrets.GITHUB_TOKEN }}
+        delete-branch: true
 # References
 # [0] https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
 # [1] https://hub.github.com/hub-pull-request.1.html
