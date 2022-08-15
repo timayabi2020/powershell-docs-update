@@ -79,8 +79,7 @@ $date = Get-Date -Format "dd-MM-yyyy"
 $proposedBranch = "weekly_update_help_files_"+$date
 $exists = git branch -l $proposedBranch
 if ([string]::IsNullOrEmpty($exists)) {
-    git checkout main
-    git checkout -b $proposedBranch main
+    git checkout -b $proposedBranch
 }else{
 	Write-Host "Branch already exists"
 }
