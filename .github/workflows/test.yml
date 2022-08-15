@@ -32,7 +32,7 @@ jobs:
     - name: Raise PR 
       uses: peter-evans/create-pull-request@v3
       with:
-        branch: "timayabi2020/docs_4"
+        branch: "timayabi2020/docs_5"
         base: main
         title: "Demo for auto pr"
         committer: Tim <timwamalwa@gmail.com>
