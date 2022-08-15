@@ -68,6 +68,8 @@ function Copy-Files{
 	if ((Test-Path $DocPath)) {
 		 Write-Host -ForegroundColor DarkYellow "Copying markdown files to " $destination
 		Copy-Item $source -Destination $destination
+        git add .
+        git commit -m "Docs update"
 	}
       
 }
