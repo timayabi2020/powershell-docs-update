@@ -98,4 +98,5 @@ Start-Copy -ModulesToGenerate $ModulesToGenerate
 cd ..\microsoftgraph-docs-powershell
 git add .
 git commit -m "Docs update"
+git status
 Write-Host -ForegroundColor Green "-------------Done-------------"
