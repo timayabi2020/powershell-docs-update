@@ -33,7 +33,7 @@ jobs:
                 
     # Create a pull request [1]
     - name: Raise PR 
-      shell: powershell
+      shell: bash
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MESSAGE_TITLE: "Docs Generation"
