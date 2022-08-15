@@ -40,7 +40,7 @@ jobs:
         body:
           This is a PR to show auto
         token: ${{ secrets.GITHUB_TOKEN }}
-        delete-branch: true
+        delete-branch: false
 # References
 # [0] https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
 # [1] https://hub.github.com/hub-pull-request.1.html
