@@ -58,7 +58,7 @@ jobs:
         Set-Location microsoftgraph-docs-powershell
         $date = Get-Date -Format "dd-MM-yyyy"
         $proposedBranch = "weekly_update_help_files_"+$date
-        Write-Host "Checking out to " $
+        Write-Host "Checking out to " $proposedBranch
         git fetch
         git checkout $proposedBranch
         git add .
