@@ -33,17 +33,16 @@ jobs:
                 
     # Create a pull request [1]
     - name: Raise PR 
-      uses: peter-evans/create-pull-request@v3
-      with:
-        #branch: "timayabi2020/docs_8"
-        base: main
-        title: "Demo for auto pr"
-        committer: Tim <timwamalwa@gmail.com>
-        author: Tim <timwamalwa@gmail.com>
-        body:
-          This is a PR to show auto
-        token: ${{ secrets.GITHUB_TOKEN }}
-        delete-branch: false
+      shell: powershell
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MESSAGE_TITLE: "Docs Generation"
+        MESSAGE_BODY: "This pull request was automatically created by the GitHub Action,\n\n Contains Help Docs"
+        REVIEWERS: timayabi2020
+        ASSIGNEDTO: timayabi2020
+        LABELS: generated
+        BASE: main
+        HEAD: ${{steps.create_branch.outputs.branch}}
 # References
 # [0] https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
 # [1] https://hub.github.com/hub-pull-request.1.html
