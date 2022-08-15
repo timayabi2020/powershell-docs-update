@@ -23,7 +23,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Update author information
-      run echo TimMayabi > AUTHOR
+      run echo "TimMayabi" > AUTHOR
       
     #- name: List Directory
     #  run: | 
